@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Author" content="Ray Calkins">
+<meta name="generator" content="HTML-Kit">
+<meta name="Description" content="A resource promulgating technology to further enable human spaceward migration.">
+<meta name="KeyWords" content="rocket, launch, propellant, science, DIY, tech, aerospace, space">
+<title>a Rocket Science Resource for Experimental
+Rocketeers [NCollector Studio by Calluna Software - Save the Web]</title>
+<link rel="STYLESHEET" href="./style.css">
+<link href="./favicon.ico" rel="icon" type="icon/ico">
+	<link rel="shortcut icon" href="./favicon.ico">
+
+</head>
+<body>
+<table summary="">
+<tr>
+
+<td>
+
+<a href="./index.htm">Home</a><br>
+<a href="./search.htm">Site&nbsp;Search</a><br>
+<a href="./propep.htm">ProPEP&nbsp;Data</a><br>
+<a href="./arocketeer.htm">Projects</a><br>
+<a href="./group-proj.htm">Collaborative&nbsp;Rocket</a><br>
+<a href="./faq.htm">The FAQs</a><br>
+<a href="./gen-ref.htm">References</a><br>
+<a href="./gen-eng.htm">General&nbsp;Engineering</a><br>
+<a href="./mech.htm">Mechanical/Materials</a><br>
+<a href="./first-step.htm">For&nbsp;Beginners</a><br>
+<a href="./tutorial.htm">Ray's&nbsp;Tutorial</a><br>
+<a href="ops.html">Operations/Safety</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<a href="environment.html">Environment</a><br>
+<a href="./shop.htm">The Shop</a><br>
+<a href="legal.html">Legal&nbsp;Issues</a><br>
+<a href="aero.html">Aeronautics</a><br>
+<a href="./guide.htm">Guidance</a><br>
+<a href="elect.html">Electonics</a><br>
+<a href="propulsion.html">Propulsion</a><br>
+<a href="./chem.htm">Chemistry</a><br>
+<a href="analysis.html">Analysis</a><br>
+<a href="structures.html">Structures</a><br>
+<a href="history.html">History</a><br>
+<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#114;&#111;&#99;&#107;&#101;&#116;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#69;&#109;&#97;&#105;&#108;&#32;&#82;&#97;&#121;</a>
+
+
+<p>
+      <a href="http://validator.w3.org/"><img src="../http.www.w3.org/Icons/valid-xhtml10.png" alt="Valid XHTML 1.0!" height="31" width="88" class="gallery-image"></a>
+    </p>
+
+
+</td>
+
+<td><h1>Updates on the aRocket discussion list group project. </h1>
+
+<p>The <a href="http://rocketforge.org/twiki/bin/view/Main/ArocketWiki">aRocketWiki</a> has a section on the igniter, the <a href="http://rocketforge.org/twiki/bin/view/Main/ArocketIgniter">aRocketIgniter</a>.</p>
+<p>
+Andrew Case has put a page up on his <a href="http://www.half-pass.com/felix/simple.html">igniter progress</a>
+</p>
+
+<p> Duncan McDonald has a section on the <a href="http://rocketworkbench.sourceforge.net/projects.phtml">RocketWork Bench site</a> at <a href="http://sourceforge.net">Sourceforge.net</a> and is <a href="http://rocketworkbench.sourceforge.net/igniter/igniter_blog.html">blogging his progress</a> there.</p>
+
+<p>The aRocket group has begun work on a reusable open source ignitor design.  Here are the updates posted to the <a href="http://www.topica.com/lists/arocket">aRocket listserv</a>:
+</p>
+
+<h3>Posted by Jamie Morken on June 28, 2004</h3>
+
+
+<p>Arocket electronics experts please <a href="http://www.rocketresearch.org/new/ignitortester.jpg">check out this circuit</a> to see how it will work for checking the continuity of an ignitor onboard a rocket (as opposed
+to being part of the ground launch electronics):</p>
+<p>I think there may be a problem with the differential inputs of the opamp
+being at or above the positive rail of the opamp, anyone know of opamps that
+can handle differentail inputs at above the positive rail?  I used a
+simulator to test the circuit using the LM358 opamp and it worked, but I
+don't trust simulators.</p>
+
+
+<h3>Posted June 16, 2004 by Dr. Case</h3>
+
+<p>After much delay we finally tested the igniter again.  We'd had trouble with the oxidizer valve not opening fully, which we fixed for this round.  This time the problem was with the design of the injectors (I think - more below).  When we attempted to hot fire the igniter there was a loud bang and a small flame <strong>behind</strong> the igniter body.  We safed everything and inspected:  The oxidizer feed line (refrigeration tubing) had ruptured in two places, obviously due to an internal explosion.  There was residual IPA inside the oxidizer feed line, which was the source of the small fire.</p>
+
+<p>Diagnosis:</p>
+<ol>
+<li>There should be no IPA in the Ox line, and no way for it to get there.  Clearly the problem is fundamental.  If there was adequate Ox flow there would be a sonic shock at the Ox injector, and this shock should form before the IPA flow is even turned on.  This suggests that the losses in the Ox line are significant.</li>
+
+<li>There is a lot of IPA around even after a very short shot.  This suggests the IPA flow rate is way too high.  I designed for a 50 psi injector drop into a 250 psi chamber.  If the Ox flow is low, then I'm getting much higher flow rates than I designed for.  This is compounded by the fact that I'm deliberately running very fuel rich in order to keep the temperatures down.</li>
+
+</ol>
+<p>Prescription:</p>
+<p>New injector head at minimum, perhaps redo the whole igniter.  I need to get the Ox flow rate down so that the losses in the plumbing and the valve are less severe.  This will mean dropping the IPA flow rate, too.  That drops total mdot, so I ought to reduce the nozzle throat diameter as well, in order to keep chamber pressure up.  I think I'm going to go to a simpler design all round.  One feature I'll certainly change is the injector placement.  As it stands the Ox injector aims straight down the combustion chamber and the IPA is injected at right angles to it.  This means the IPA splashes against the far side of the chamber, presumably some going up the chamber and some going down.  The stuff that goes up the chamber is what got into the Ox plumbing and caused the explosion.  I'm going to keep the right angle impingement but tilt the injectors by 45 degrees, so that each one injects at 45 degrees to the combustion chamber axis.  This way, even if there is a problem with the Ox flow the IPA will be unlikely to splash into the injector.
+</p>
+<p>One other point to note - using IPA was the right thing to do.  An IPA fire is really benign, apart from the fact that the flames are a little hard to see.  Kero would have been much more exciting, both hotter and dirtier.
+ </p>
+
+<h3>Posted April 17, 2004 by Duncal McDonald</h3>
+
+<p>Details at <a href="http://rocketworkbench.sourceforge.net/igniter/igniter_blog.html">The igniter blog at Sourceforge.</a>
+</p>
+
+<p>Received the rev b driver boards which work fine; no interference
+problems and everything fits correctly. That is it for the driver board.
+I built an Excel spreadsheet for small biprop motor design. The only
+difference with this one is it uses a set of equations I derived from
+curve-fitting the results of a whole lot of Propep runs so that the
+spreadsheet calculates ISP, chamber temperature, gas molecular weight,
+and gamma as a function of chamber pressure and % fuel rich. Check it
+out and tell me what you think- is this approach useful or not? Thanks
+to Michael Castle for writing a program to filter the output of Propep
+saving me hours of work. My teacart is starting to come together and I
+should get to actually try and fire the igniter in the next month.
+</p>
+
+<h3>Update posted to aRocket on Dec. 27 2003</h3>
+
+<p>Since my last real test I've tried firing twice more.  Both times have ended in frustration due to issues which are at root due to the fact that I don't have a decent test stand.  Right now my setup is an aluminum plate drilled with holes for bolting stuff down, two boxes for the electronics which just sit on top of the plate, and gas bottles and IPA tank just zip tied to whichever cart I can borrow for the current test.  Since the carts are not mine (these are either shop utility carts or oscilloscope carts)  I can't make permanent fixtures for them.</p>
+
+<p>The long and the short of it is that I've decided to build my own test stand cart.  I'm looking for ideas on what features to include and what things to watch out for.  It's early in the design phase right now so I can make whatever adjustments are needed.  Bonus points if the cart ends up suitable for testing engines under 400 lbf as well as igniters.  My constraints are:</p>
+<ol>
+<li>must be highly portable - I'll be moving this thing back and forth between home, lab, and test sites.  I have a ruptured disk in my back, so brute force is out.</li>
+<li>must emphasize safety - this means not just that it's possible to operate everything safely, but that it's *easy* to be safe, and preferably hard to be dangerous.</li>
+<li> must be flexible enough to allow for real experimentation.</li>
+</ol>
+
+<p>I have various ideas about how to approach this, but I'd like to see <a href="http://www.topica.com/lists/arocket">what the list has to say.</a></p>
+
+<p>On a peripheral issue - I need some small three way solenoid valves rated to 300 psi.  Exact size isn't really important, but I'm looking at ~1/16" lines for making connections.  I can find lots of small three way solenoid valves for ~100 psi, and big ones for up to 1200 psi, but small and 300 psi I haven't found yet.  I'm going to give Snap-Tite a call on Monday, but I figured I'd see if anyone on the list knows other possible sources (I've tried the obvious ones like McMaster).</p>
+
+<h3>Update: The first full igitor test posted Oct. 25, 2003 by Dr. Case</h3>
+<p>Summary: the first attempt at a hot fire test didn't go well. Ignition
+was not immediate on introduction of IPA into the chamber (Ox leads,
+IPA 0.1 second later, spark starts at same time as Oxygen).</p>
+
+<p>Gory details - I'm working with two collaborators, Ron &amp; Jane (both
+EEs). After the successful cold flow test I managed to get the Oxygen
+regulator cleaned, and Ron, Jane and I spent the afternoon hooking up
+the plumbing for a full test. One of the things that came out of the
+cold flow test was a need to apply tape on the NPT threads rather than
+just rely on the taper (yet another case of do it right or do it over).</p>
+
+<p>We did this, but ran into trouble with the IPA solenoid - the threads
+on the input side ended up getting damaged, but after much hassle we
+were able to get everything back together, this time with tape on the
+threads. Fixing the thread damage involved running a tap over them,
+generating some chips in the process. I attempted to get all the chips
+out, but it seems likely that at least some remained. We separately
+tested the spark and the valves (first under no pressure and then just
+the oxygen pressurized). We had good spark, and the valves sequenced as
+expected.</p>
+
+<p>When we attempted to fire the igniter there was a spray of IPA out of
+the nozzle, followed a brief moment later by a flash of flame. I
+released the ignition switch as soon as I saw the spray, realizing that
+this was a Bad Thing, but the ignition happened anyway. It was LOUD.
+Following Ox and spark shutdown the IPA continued to flow, almost
+certainly due to chips in the IPA solenoid either damaging the valve or
+wedging it open. That was the end of testing.</p>
+
+<p>The failure to get immediate ignition is a clear failure of the current
+setup. From the cold flow tests it was very clear that we were getting
+good spray. It might be that the spark plug is not getting the right
+mixture of fuel and Ox early enough in the sequence (I have to double
+check if it is shadowed by anything - I don't think it is, but I need
+to double check). Other possibilities are that the IPA we were using
+was contaminated with significant amounts of water (I doubt it),
+failure of the spark plug (we had to jury-rig a bit to get the MSD
+supplied cable to fit the little plug), or failure of the spray pattern
+(cold flow test was necessarily done without the combustion chamber in
+place, so I could see the spray pattern - if the pattern is changed
+appreciably by the presence of the chamber walls then all bets are off.
+I wonder if the spray may settle out on the chamber walls and form a
+flowing sheet of IPA that interferes with access of the spark to the
+fuel-air mixture). The injector sizing is set to run pretty fuel-rich,
+so perhaps that's part of the problem.</p>
+
+<p>Anyway, I'm not happy at all with the late ignition. I'll have to spend
+a lot of time debugging to sort this out. The good news is that
+everything else worked fine, so at least I've localized the problem to
+something in the igniter itself. The next steps are to buy a new
+solenoid to replace the damaged one, tighten up the electronics layout
+(it's a bit messy and interferes with easy access to the solenoids and
+other valves), examine the igniter body for insight into the problem,
+and implement whatever changes seem most likely to improve ignition
+speed.</p>
+
+<p>The test is not a failure since I learned useful things from it, but it
+would be nice if everything had gone as I hoped. Still, we test to find
+problems under circumstances where they can be understood and the harm
+caused is limited, so in that sense it was a success.
+</p>
+
+
+<h3>Update posted Oct. 13, 2003 by Dr. Case</h3>
+<p>I did a cold flow test on the igniter injector system this weekend. I
+substituted water for IPA and nitrogen for GOX. This was also a test of
+the propellant pressurization system, in particular the little widget I
+made to adapt a paintball tank to serve as an IPA tank (<a href="http://www.rocketforge.org/acase/felix/adapter1.jpg">picture here</a>
+, <a href="http://www.rocketforge.org/acase/felix/IPAtankport.jpg">schematic here)</a>
+. The adapter
+worked perfectly - no leaks. There were leaks elsewhere in the system
+due to my not using thread dope on the NPT fittings. I knew I was
+taking a chance doing this, but figured I could always fix it if it
+turned out to be a problem. It did, and I will. The notion of firing
+the igniter with little puddles of IPA lying around does not appeal to
+me.</p>
+
+<p>Currently all the plumbing is NPT and swagelok. I'm going to ditch the
+swagelok and go to AN fittings at some time in the not too distant
+future, but probably only after I have a successful hot fire test.</p>
+
+<p>The spray pattern was uniform as far as I could tell by eye. I bought a
+disposable camera to take a few pictures, but I don't have great hopes
+for high quality from them. I'll have to get them developed and scan
+them before posting them on rocketforge. Next time I'll remember to
+bring the digital camera and get some high quality shots. The test
+ended when a little water from one of the leaks got into the
+electronics and caused a solenoid to lock up in the open position. I
+don't think any damage was done that can't be fixed by drying
+everything out.</p>
+
+<p>The only remaining steps before hot fire are to reconfigure the
+plumbing and to oxidizer clean the GOX regulator. I probably won't be
+able to do it before the end of the month due to an upcoming
+conference, but shortly after I get back it will be my top priority.</p>
+
+
+<h3>Udate posted Oct. 11 2003 by Duncan McDonald</h3>
+<p>Here's the text version. The html version with linked references and a
+block diagram are at <a href="http://rocketworkbench.sourceforge.net/igniter/igniter_blog.html">SourceForge.</a></p>
+
+
+<p>In September I thought I was pretty close to getting a board done. Jamie
+Morken volunteered to write the microcontroller code and after we went
+over everything Jamie pointed out I needed a couple of more I/O pins on
+the AVR (a 32 pin ATmega8). After trying a few workarounds it was clear
+that I would have to switch to a 44 pin Atmega16.</p>
+
+<p>Since I was faced with that setback I decided to build a small prototype
+of the AVR microcontroller circuit and check out the noise situation
+that I was so worried about last month. I also learned how to use
+interrupts and use the AVR onboard timers so it was a fun little
+project. </p>
+
+<p>I didn't bother to write all the code (or get Jamie to do it)
+and just set up the 16 bit timer1 to put out a 1kHz square wave. Once
+the timer is programmed it runs independently of any other code that is
+running so it is like mini-multitasking in the microcontroller. </p>
+
+<p>To
+imitate the other code (for solenoid control, ignition detection, etc.)
+that will be running in the main loop I programmed two output pins to
+drive two LED's that blinked in an on/off sequence. That way it would be
+easy to tell if the AVR died or freaked out when the spark plug was
+sparking. Well, the square wave came out and the spark plug sparked ,
+but the LED's went wacky.</p> 
+
+<p>When I removed the coil 12V (oh yeah, I used
+the old sparkplug/coil prototype Thom and I had used before except the
+coil and plug are rigidly mounted to a small aluminum plate. The coil is
+connected to a large 12V gel cell and the controller to a 9V battery),
+the microcontroller went right into the main loop like nothing had ever
+happened. If there was a lot of EMI I would expect the program counter
+and register contents to be scrambled and the whole thing would just
+hang. </p>
+
+<p>Somehow the controller was able to recover quite nicely! Obviously
+there is some kind of EMI issue that needs to be solved so I am first
+going to try adding a snubber on the IGBT to reduce the flyback dV/dt,
+second I'll shield the coil/plug and/or processor, then third add
+optical isolation to the driver and isolated power if absolutely
+necessary. </p>
+
+<p>To design the snubber I really need to know what the coil HV
+waveforms look like so I need a HV scope probe. I have been avoiding
+this issue since HV scope probes are kind of expensive ($300-$600). I
+found a few used ones on Ebay for about $100 but decided to try and
+build one first. There is a nice explanation and example at Basics of
+High Voltage Probe Design and Homemade High Voltage Probe. I wasn't able
+to find any of the required high voltage resistors at the usual online
+sources so I called Caddock directly. I talked to a very friendly
+applications engineer who recommended the MX440 11kV 10Meg resistors as
+a place to start. When I asked for one sample he replied "I won't send
+you one but I will send you two. I never send one of anything". Nice
+guy! It will be interesting to measure the actual output voltage as I
+really have little idea of what it is.</p>
+
+<p>On another note, as I mentioned in another Arocket post, I was fortunate
+enough to see Elon Musk of RocketX speak at Stanford University. In the
+course of his talk he mentioned that they were using ethernet for
+internal communications, which got me thinking. I had bought an AVR
+ethernet demo board from EDTP Electronics for another project ( Easy
+Ethernet AVR ). The EDTP board comes with C source code for an
+ImageCraft compiler. There is also source code for the free AVR Freaks
+gcc compiler (which Jamie plans on using for the igniter board)
+elsewhere on the 'net. I have a CodeVision compiler and didn't want to
+take the time to install the gcc compiler ( Winavr ). Fortunately it
+only took a few minutes to fix the compiler errors and produce working
+code (well, I was able to ping it) using my CodeVision compiler. A
+pretty complete solution (support for tcp, udp, icmp, arp) fits in only
+5KBytes out of 16KBytes of flash memory. Pretty impressive! And that 5K
+includes some UART code for debug messages so I bet it could be reduced
+to only 3 or 4K for tcp support only. The ethernet controller (Realtek
+RTL8019AS) is also only $8. If CAN turns out to be a big hassle,
+ethernet looks like a pretty attractive alternative.</p>
+
+
+<p>Update posted Sep. 6, 2003 by Dr. Case:</p>
+<p>After a summer slow down, this igniter project is moving again. I am currently laying out the PC board and hope to send it  out this weekend. I 'm using Eagle sw and have found that I have to make my own layout packages for library parts 90% of the time. That really slows the process down. I am also a bit nervous about induced noise from the coils primary voltage flyback causing the microcontroller to reset. I am going to set up a little experiment to test that this weekend as well before I send the PCB out for manufacturing. BTW, I have been using <a href="http://www.custompcb.com">CustomPCB</a> in Malaysia for board manufacturing lately. $72 gets you a double sided, 4" x 5.5", solder masked and panelized (they cut up the 4x5.5 panel into as many of your pieces as fit) fedex'd to your door 5 business days after ordering. Much better than ExpressPCB or Olimex. The owner, Gary Cho, has been very helpful and responsive to all of my questions. A global economy success story. One issue I had on the PCB was heatsinking the surface mount coil driver (the board is almost all surface mount). There are a lot fewer heatsinking options in SMD than through-hole. I talked to an applications engineer at Aavid/Thermalloy and he recommended a heatsink that should do the job. I hope.</p>
+ 
+<p>Thom McGaffey and I had worked on machining the igniter body about a month ago but the original design was too hard to accurately machine. Thom redid the design and has machined and welded a beautiful prototype from 304 stainless. I didn't get a picture of it but I will next time.</p>
+ 
+<p>Decided to use the Tecumseh small engine coil. It is not as high performance as the Ford coil and it runs hotter, but it is $18 versus about $60 and has a nicer form factor. </p>
+ 
+<p>I have been talking to the guys at Portland Aerospace (PSAS) about their use of the CAN bus as I am designing in both CAN and I2C (and manual bit switching) interfaces. I hope to meet up with them at BALLS and get an up close look at their avionics architecture &amp; implementation. They will be launching their airframe with both an N and O motor at BALLS.</p>
+ 
+<p> I've put some pictures and schematics on rocketforge.<br>
+<a href="http://www.rocketforge.org/acase/felix/CO2bottles1.jpg">The Paintball bottles</a><br>
+<a href="http://www.rocketforge.org/acase/felix/adapter1.jpg">The adapter fitting</a><br>
+<a href="http://www.rocketforge.org/acase/felix/adapt_tank1.jpg">The fitting on a bottle</a> (out of focus - sorry about that)<br>
+<a href="http://www.rocketforge.org/acase/felix/IPAtankport.jpg">Plan for the adapter</a><br>
+<a href="http://www.rocketforge.org/acase/felix/IPAplumbing.jpg">IPA Plumbing layout</a>
+ </p>
+
+<p>Older entries are in the <a href="group-proj-arch.html">Project Arhcive</a></p>
+
+
+
+
+</td>
+
+</tr>
+</table>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
