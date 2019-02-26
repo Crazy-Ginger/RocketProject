@@ -1,15 +1,26 @@
 $fs = 0.1;
 $fa = 5;
 
+module aerospike(aH, aeroD, thickness)
+{
+    translate ([0,0,-5])
+        {
+            pipe(140, aeroD, thickness);
+        }
 
-module pipe (cH, outD, innerD)
+        translate([0,0,-105])
+        {
+            color("grey")cylinder(100, 0, aeroD);
+        }
+}
+module pipe (cH, outerD, thickness)
 {
 	difference()
 	{
-		color ("gray") cylinder(cH, r = outD, centre = true);
+		color ("grey") cylinder(cH, r = outerD, centre = true);
 		translate([0,0,-1])
 		{
-			color("orange") cylinder(cH + 2, r = innerD, centre = true);
+			color("orange") cylinder(cH + 2, r = (outerD-thickness*2), centre = true);
 	    }
 	}
 }
@@ -21,7 +32,7 @@ module hemisphere(outerD, innerD)
 	{
 		difference()
 		{
-			color("gray") sphere(outerD);
+			color("grey") sphere(outerD);
 			color("orange") sphere(innerD); 
 		}
 		translate([-outerD, -outerD, 0])
@@ -32,26 +43,27 @@ module hemisphere(outerD, innerD)
 }
 
 
-module chamber(cH, outerD, thickness)
+module chamber(cH, aH, outerD, aeroD, thickness)
 {
-	if (2 * thickness > outerD)
-	{
-		echo("To THICK"); 
-	}
-	else 
-		echo("lets continue");
-		innerD = outerD - (2 * thickness);
-		pipe(cH, outerD, innerD);
-				
-		translate ([0, 0, cH])
-		{
-			
-		    hemisphere(outerD, innerD);
-		}
-		
+    if (2 * thickness > outerD)
+    {
+        echo("To THICK"); 
+    }
+    else 
+    {   
+        aerospike(aH, aeroD, thickness);
+        echo("lets continue");
+        innerD = outerD - (2 * thickness);
+        pipe(cH, outerD, thickness);
+    
+        translate ([0, 0, cH])
+        {
+            hemisphere(outerD, innerD);
+        }
+    
         //this bit needs to be automated but doing manually is fine for now
-		rotate([0, 180, 0])
-		{
+        rotate([0, 180, 0])
+        {
             difference()
             {
                 hemisphere(outerD, innerD);
@@ -60,17 +72,15 @@ module chamber(cH, outerD, thickness)
                     color("orange") cylinder(outerD*2.3, 0, outerD);
                 }
             }
-		}
-	
+        }
+    }
 }
 
-
-
-translate([0, 0, -50])
+translate([0, 0, 0])
 {
     difference()
     {   
-        chamber(100, 40, 2);
+        chamber(100, 100, 40, 20, 2);
         translate([0, 0, 130])
         {
         color("orange") cylinder(10, 10, 10);
