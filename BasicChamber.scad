@@ -3,12 +3,12 @@ $fa = 5;
 
 module aerospike(aH, aeroD, thickness)
 {
-    translate ([0,0,-5])
+    translate ([0,0,-20])
         {
-            pipe(140, aeroD, thickness);
+            pipe(155, aeroD, thickness);
         }
 
-        translate([0,0,-105])
+        translate([0,0,-120])
         {
             color("grey")cylinder(100, 0, aeroD);
         }
@@ -67,7 +67,7 @@ module chamber(cH, aH, outerD, aeroD, thickness)
             difference()
             {
                 hemisphere(outerD, innerD);
-                translate([0,0,-outerD*1.2])
+                translate([0,0,-outerD*0.5])
                 {
                     color("orange") cylinder(outerD*2.3, 0, outerD);
                 }
