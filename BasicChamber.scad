@@ -52,27 +52,27 @@ module chamber(cH, aH, outerD, aeroD, thickness)
     else 
     {   
         aerospike(aH, aeroD, thickness);
-        echo("lets continue");
-        innerD = outerD - (2 * thickness);
-        pipe(cH, outerD, thickness);
-    
-        translate ([0, 0, cH])
-        {
-            hemisphere(outerD, innerD);
-        }
-    
-        //this bit needs to be automated but doing manually is fine for now
-        rotate([0, 180, 0])
-        {
-            difference()
-            {
-                hemisphere(outerD, innerD);
-                translate([0,0,-outerD*0.5])
-                {
-                    color("orange") cylinder(outerD*2.3, 0, outerD);
-                }
-            }
-        }
+//        echo("lets continue");
+//        innerD = outerD - (2 * thickness);
+//        pipe(cH, outerD, thickness);
+//    
+//        translate ([0, 0, cH])
+//        {
+//            hemisphere(outerD, innerD);
+//        }
+//    
+//        //this bit needs to be automated but doing manually is fine for now
+//        rotate([0, 180, 0])
+//        {
+//            difference()
+//            {
+//                hemisphere(outerD, innerD);
+//                translate([0,0,-outerD*0.5])
+//                {
+//                    color("orange") cylinder(outerD*2.3, 0, outerD);
+//                }
+//            }
+//        }
     }
 }
 
@@ -80,7 +80,7 @@ translate([0, 0, 0])
 {
     difference()
     {   
-        chamber(100, 100, 40, 20, 2);
+        chamber(cH = 100, aH = 100, outerD = 40, aeroD = 20, thickness = 2);
         translate([0, 0, 130])
         {
         color("orange") cylinder(10, 10, 10);
