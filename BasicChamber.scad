@@ -124,7 +124,7 @@ module chamber(cH, outerD, aeroD, thickness)
 }
 //
 
-scale([0.01, 0.01, 0.01])
+scale([100])
 {
     difference()
     {   
