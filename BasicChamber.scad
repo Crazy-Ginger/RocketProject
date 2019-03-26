@@ -1,5 +1,5 @@
-$fs = 0.1;
-$fa = 5;
+$fs = 0.01;
+$fa = 1;
 
 module outletF(thickness)
 {
