@@ -1,5 +1,5 @@
-$fs = 0.1;
-$fa = 5;
+$fs = 0.01;
+$fa = 1;
 
 module outletF(thickness)
 {
@@ -124,14 +124,17 @@ module chamber(cH, outerD, aeroD, thickness)
 }
 //
 
-scale([100])
+union()
 {
-    difference()
-    {   
-        chamber(cH = 10,  outerD = 4, aeroD =2, thickness = 0.2, display =  false);
-        translate([0, 0, 13])
-        {
-        color("orange") cylinder(1, 1, 1);
+    scale([100])
+    {
+        difference()
+        {   
+            chamber(cH = 10,  outerD = 4, aeroD =2, thickness = 0.2, display =  false);
+            translate([0, 0, 13])
+            {
+            color("orange") cylinder(1, 1, 1);
+            }
         }
     }
 }
