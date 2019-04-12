@@ -24,7 +24,7 @@ printer_layer_height = 2; //for preview (F5) x20, set this to 0.1 for rendering 
 blade_thickness = 2; //thickness of blade
 turbine_height = 20;
 num_blades = 6;
-rotation_dir = -1; //CCW = -1, CW = 1
+rotation_dir = -1; //anti-clockwise= -1, clockwise = 1
 
 pi = 3.14159265359;
 blade_cirf = 2*pi*blade_radius;
@@ -121,20 +121,26 @@ difference()
             base = 3;
             end_point = pow(base,1)-1;
             
-            union() {
-            for (i=[0:offset_slicing-1]){
-            if (i < slicing) {
-            offset_r = delta_r*((pow(base,i/slicing)-1)/end_point); //Normalised N 
-            offset_r_increment = delta_r*((pow(base,(i+1)/slicing)-1)/end_point);  //Normalised N+1    
-            translate([0,0,i*layer_h])
-            cylinder(layer_h, bot_r + offset_r, bot_r + offset_r_increment, center=false, $fn=100);
+            union() 
+            {
+                for (i=[0:offset_slicing-1])
+                {
+                    if (i < slicing) 
+                    {
+                        offset_r = delta_r*((pow(base,i/slicing)-1)/end_point); //Normalised N 
+                        offset_r_increment = delta_r*((pow(base,(i+1)/slicing)-1)/end_point);  //Normalised N+1    
+                        translate([0,0,i*layer_h])
+                        cylinder(layer_h, bot_r + offset_r, bot_r + offset_r_increment, center=false, $fn=100);
+                    }
+                    else 
+                    {
+                        translate([0,0,i*layer_h])
+                        cylinder(layer_h, top_r, top_r, center=false, $fn=100);    
+                    }
+                    //echo("Layer: ", i);    
+                }
             }
-            else {
-            translate([0,0,i*layer_h])
-            cylinder(layer_h, top_r, top_r, center=false, $fn=100);    
-            }
-            //echo("Layer: ", i);    
-            }}*/
+            */
             
         }
         
@@ -177,4 +183,3 @@ module arc(length, width, arch_height)
         }
     }
 }
-
