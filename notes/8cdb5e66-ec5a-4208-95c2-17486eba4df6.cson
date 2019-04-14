@@ -1,0 +1,31 @@
+createdAt: "2019-04-14T19:48:07.145Z"
+updatedAt: "2019-04-14T20:39:57.313Z"
+type: "MARKDOWN_NOTE"
+folder: "122ec9f16838a493ad08"
+title: "Centrifugal Pump"
+tags: [
+  "Fluid"
+  "Pump"
+]
+content: '''
+  <h1>Centrifugal Pump</h1>
+  storage pressure of propane at 21&deg;C = 850,000kPa (or 8.5 bar)
+  Euler's pump equation can be used to calculate the flow rate of gas as it exits a centrifugal pump
+  
+  $M + M_r = \\rho\\cdot Q \\cdot(c_2 \\cdot r_2 - c_1\\cdot r_1)$
+  
+  $M=\\ external\\ torque\\ (Nm)$$
+  $M_r=\\ friction\\ acting\\ against\\ impeller\\ (Nm)$
+  $\\rho=\\ density\\ (kgm^{-3})$
+  $Q=\\  volumetric\\ flow\\ rate\\ (m^3s^{-1})$
+  $c_2=\\ flow\\ velocity\\ at\\ circumference\\ of\\ impeller\\ (ms^{-1})$
+  $r_2=\\ radius\\ of\\ impeller\\ (m)$
+  $c_1\\ \\&\\ r_1\\ are\\ equivalent\\ (c_2\\ \\&\\ r_2)\\ for\\ inlet\\ of\\ impeller$
+  
+  [Browse Formulae](https://www.fxsolver.com/browse/)
+  
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false
