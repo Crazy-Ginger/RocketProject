@@ -7,7 +7,8 @@ prop_dist = 3.8; //propeller distance travelled
 blade_radius = prop_dia*inch_mm/2;
 pitch_angle = atan(prop_dist*inch_mm/blade_radius);
 */
-
+$fa = 10;
+$fs = 0.1;
 
 
 blade_radius = 50;
@@ -103,12 +104,12 @@ difference()
                         offset_r = delta_r*((1-1/exp(exp_pow*(i/slicing)))/end_point); //Normalised N
                         offset_r_increment = delta_r*((1-1/exp(exp_pow*((i+1)/slicing)))/end_point); //Normalised N+1  
                         translate([0,0,i*layer_h])
-                        cylinder(layer_h, bot_r + offset_r, bot_r + offset_r_increment, center=false, $fn=100);
+                        cylinder(layer_h, bot_r + offset_r, bot_r + offset_r_increment, center=false, $fn=20);
                     }
                     else 
                     {
                         translate([0,0,i*layer_h])
-                        cylinder(layer_h, top_r, top_r, center=false, $fn=100);    
+                        cylinder(layer_h, top_r, top_r, center=false, $fn=20);
                     }    
                     
                 }
@@ -130,12 +131,12 @@ difference()
                         offset_r = delta_r*((pow(base,i/slicing)-1)/end_point); //Normalised N 
                         offset_r_increment = delta_r*((pow(base,(i+1)/slicing)-1)/end_point);  //Normalised N+1    
                         translate([0,0,i*layer_h])
-                        cylinder(layer_h, bot_r + offset_r, bot_r + offset_r_increment, center=false, $fn=100);
+                        cylinder(layer_h, bot_r + offset_r, bot_r + offset_r_increment, center=false, $fn=20);
                     }
                     else 
                     {
                         translate([0,0,i*layer_h])
-                        cylinder(layer_h, top_r, top_r, center=false, $fn=100);    
+                        cylinder(layer_h, top_r, top_r, center=false, $fn=20);
                     }
                     //echo("Layer: ", i);    
                 }
@@ -144,11 +145,13 @@ difference()
             
         }
         
-        cylinder( turbine_height, stem_bot_r, stem_top_r,center=false, $fn=100); //Centre stem
+        cylinder( turbine_height, stem_bot_r, stem_top_r,center=false, $fn=20); //Centre stem
         
     }
-    
-    cylinder( shaft_fit_l, shaft_fit_r, shaft_fit_r, center=false, $fn=100); 
+    translate([0,0,-1])
+    {
+        cylinder( shaft_fit_l+2, shaft_fit_r, shaft_fit_r, center=false, $fn=20); 
+    }
 } //Push fit cutout
 //
 
@@ -167,8 +170,8 @@ module arc(length, width, arch_height)
             translate([0,-radius+arch_height,0])
             difference() 
             {
-                circle(r=radius+width,$fn=100);
-                circle(r=(radius),$fn=100);
+                circle(r=radius+width,$fn=20);
+                circle(r=(radius),$fn=20);
             }
             
             translate([-(radius+width),-(radius+width)*2,0,])
